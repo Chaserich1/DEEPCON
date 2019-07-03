@@ -1,10 +1,10 @@
-import setuptools
+from setuptools import setup, find_packages
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="DeepconCovariance",
+    name="DEEPCON",
     version="0.0.3",
     author="Badri Adhikari",
     author_email="adhikarib@umsl.edu",
@@ -12,11 +12,10 @@ setuptools.setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/badriadhikari/DEEPCON",
-    packages=setuptools.find_packages(exclude=['deepcon-seq/*']),   
+    packages=find_packages(),    
 	package_data={
         'DEEPCON.covariance': [
-            'DeepconCovariance/deepcon-covariance/weights-rdd-covariance.hdf5',
-			'DeepconCovariance/deepcon-covariance/*'
+            'DEEPCON/deepcon-covariance/weights-rdd-covariance.hdf5'
         ]
     },
     include_package_data=True,
